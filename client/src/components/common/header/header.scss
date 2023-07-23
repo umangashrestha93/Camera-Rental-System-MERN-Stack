@@ -1,0 +1,105 @@
+@mixin min($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+header {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+
+  .logo {
+    img {
+      width: 100px;
+      height: 40px;
+
+      @include min(992px) {
+        width: 140px;
+        height: 60px;
+      }
+    }
+  }
+
+  // .cart-icon {
+  //   &:hover {
+  //     color: #22a39f;
+  //   }
+
+  //   i {
+  //     font-size: 20px;
+  //   }
+  // }
+
+  .isFlex {
+    // display: none;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        color: #64b0b2;
+      }
+    }
+
+    @include min(1440px) {
+      // display: flex;
+      // gap: 30px;
+    }
+  }
+
+  .login-btn {
+    border: 1px solid #22a39f;
+    &:hover {
+      background-color: #1a8884 !important;
+    }
+  }
+
+  .signup-btn {
+    box-sizing: border-box;
+    border: 1px solid #22a39f;
+
+    &:hover {
+      background-color: #e4e4e4 !important;
+    }
+  }
+
+  .small {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    background-color: #22a39f;
+    padding: 20px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    font-size: 16px;
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+
+    button {
+      padding: 8px 12px;
+      i {
+        font-size: 24px;
+      }
+    }
+
+    @include min(1440px) {
+      display: none;
+    }
+  }
+}
